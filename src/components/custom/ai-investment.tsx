@@ -29,7 +29,7 @@ const BlockchainRealEstate: React.FC = () => {
             <li className="flex items-start space-x-3">
               <span className="text-primary">●</span>
               <p className="md:text-base text-sm">
-                <strong className="text-primary text-lg">
+                <strong className="text-primary md:text-lg text-base">
                   Accurate, Data-Driven Deal Valuations
                 </strong>
                 <br />
@@ -41,7 +41,7 @@ const BlockchainRealEstate: React.FC = () => {
             <li className="flex items-start space-x-3">
               <span className="text-primary">●</span>
               <p className="md:text-base text-sm">
-                <strong className="text-primary text-lg">
+                <strong className="text-primary md:text-lg text-base">
                   Predictive Market Trends to Stay Ahead
                 </strong>
                 <br />
@@ -53,7 +53,7 @@ const BlockchainRealEstate: React.FC = () => {
             <li className="flex items-start space-x-3">
               <span className="text-primary">●</span>
               <p className="md:text-base text-sm">
-                <strong className="text-primary text-lg">
+                <strong className="text-primary md:text-lg text-base">
                   24/7 AI Support for Rapid Deal Execution
                 </strong>
                 <br />
@@ -64,7 +64,7 @@ const BlockchainRealEstate: React.FC = () => {
             <li className="flex items-start space-x-3">
               <span className="text-primary text-lg">●</span>
               <p className="md:text-base text-sm">
-                <strong className="text-primary">
+                <strong className="text-primary md:text-lg text-base">
                   High-Value Lead Scoring to Enhance Deal Flow
                 </strong>
                 <br />
@@ -75,7 +75,7 @@ const BlockchainRealEstate: React.FC = () => {
             <li className="flex items-start space-x-3">
               <span className="text-primary text-lg">●</span>
               <p className="md:text-base text-sm">
-                <strong className="text-primary">
+                <strong className="text-primary md:text-lg text-base">
                   AI-Optimized Marketing Campaigns to Attract Ideal Buyers
                 </strong>
                 <br />
@@ -87,7 +87,7 @@ const BlockchainRealEstate: React.FC = () => {
             <li className="flex items-start space-x-3">
               <span className="text-primary text-lg">●</span>
               <p className="md:text-base text-sm">
-                <strong className="text-primary">
+                <strong className="text-primary md:text-lg text-base">
                   Advanced Fraud Detection for Secure Transactions
                 </strong>
                 <br />
@@ -98,7 +98,7 @@ const BlockchainRealEstate: React.FC = () => {
             <li className="flex items-start space-x-3">
               <span className="text-primary text-lg">●</span>
               <p className="md:text-base text-sm">
-                <strong className="text-primary">
+                <strong className="text-primary md:text-lg text-base">
                   Comprehensive Neighborhood Insights for Investment Confidence
                 </strong>
                 <br />
