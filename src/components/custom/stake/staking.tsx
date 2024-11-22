@@ -24,7 +24,7 @@ export const Staking = () => {
           </ul>
           <h2 className="mb-4 mt-8">
             <Link
-              to="https://app.uniswap.org/"
+              to="https://jup.ag/"
               className="mt-2 w-full rounded-[10px] bg-brand-100 px-[40px] py-[15px] text-xs font-semibold uppercase hover:bg-green-600"
             >
               BUY $AAV{" "}
@@ -33,8 +33,8 @@ export const Staking = () => {
           <div className="mt-8 font-medium">
             AVAILABLE ON: <br></br>
             <a
-              href="https://app.uniswap.org/"
-              className="flex w-60 justify-center xl:justify-start"
+              href="https://jup.ag/"
+              className="flex w-60 xl:justify-start"
             >
               <img src="./images/jupiterLogo.png" />
             </a>
@@ -186,9 +186,13 @@ const Left = styled.div`
   padding: 0 20px;
 
   img {
-    width: 70%;
+    width: 60%;
     margin-top: 20px;
     text-decoration: underline;
+
+     @media only screen and (max-width: 1200px) {
+    width: 55%;
+  }
   }
 
   @media only screen and (max-width: 1200px) {
