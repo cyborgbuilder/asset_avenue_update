@@ -13,7 +13,7 @@ const BlockchainRealEstate: React.FC = () => {
       {/* Content Section */}
       <div className="flex w-full flex-col gap-5 md:flex-row">
         {/* Left Section */}
-        <div className="flex h-full w-full flex-col items-center justify-center md:w-[55%] md:items-start">
+        <div className="flex h-full w-full flex-col items-center justify-center md:w-[55%] md:items-start order-2 md:order-1">
           <ul className="space-y-4">
             <li className="flex items-start space-x-3">
               <span className="text-primary">●</span>
@@ -111,7 +111,7 @@ const BlockchainRealEstate: React.FC = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 mt-10 md:mt-0 h-full md:w-[50%]">
+        <div className="flex-1 h-full md:w-[50%] order-1 md:order-2 ">
           <motion.img
             src="./images/ai-logo.png"
             alt="AI Real Estate Illustration"
