@@ -1,3 +1,4 @@
+// src/pages/Home.tsx
 import {
   Copyright,
   DAO,
@@ -9,9 +10,10 @@ import {
   Projects,
   Team,
   Work,
-  BlockchainRealEstate
+  BlockchainRealEstate,
+  Countdown
 } from "@/components";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 const backgroundStyles = [
   {
@@ -33,8 +35,14 @@ const backgroundStyles = [
 ];
 
 export const Home: FC = () => {
+  const [showPopup, setShowPopup] = useState(true);
+
+  const handleClosePopup = () => setShowPopup(false);
+
   return (
     <section className="relative flex w-screen overflow-x-hidden flex-col items-center">
+       {showPopup && <Countdown onClose={handleClosePopup} />}
+
       {backgroundStyles.map((style, index) => {
         return (
           <video
@@ -60,14 +68,13 @@ export const Home: FC = () => {
         );
       })}
 
-      <div className="flex w-full max-w-[1066px] flex-col gap-y-16 ">
+      <div className="flex w-full max-w-[1066px] flex-col gap-y-16">
         {/* navbar */}
         <Navbar />
         {/* hero section */}
         <Hero />
         {/* how does it work section */}
         <Work />
-
         <BlockchainRealEstate />
         {/* available passive income projects */}
         <Projects />
@@ -75,7 +82,7 @@ export const Home: FC = () => {
         <OwnHouse />
         {/* asset avenue dao */}
         <DAO />
-        {/* out team */}
+        {/* our team */}
         <Team />
         {/* invest */}
         <Invest />
