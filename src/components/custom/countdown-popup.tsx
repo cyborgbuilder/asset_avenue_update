@@ -14,21 +14,21 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft((prev) => prev - 1000);
+      setTimeLeft((prev) => Math.max(prev - 1000, 0)); // Prevent negative time
     }, 1000);
 
     return () => clearInterval(interval); // Clean up on unmount
   }, []);
 
   const formatTime = (ms: number) => {
-    const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+    const totalSeconds = Math.floor(ms / 1000);
     const days = Math.floor(totalSeconds / 86400);
     const hours = Math.floor((totalSeconds % 86400) / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
 
     return {
-      days: String(days).padStart(2, "0"), // Leading zeros
+      days: String(days).padStart(2, "0"),
       hours: String(hours).padStart(2, "0"),
       minutes: String(minutes).padStart(2, "0"),
       seconds: String(seconds).padStart(2, "0"),
@@ -40,12 +40,15 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       {/* Popup Container */}
-      <div className="relative rounded-lg shadow-lg max-w-sm text-center overflow-hidden">
+      <div
+        className="relative rounded-lg shadow-lg max-w-xs md:max-w-sm text-center overflow-hidden
+          transform scale-0 animate-popup"
+      >
         {/* Background Image Layer */}
         <div
           className="absolute inset-0 h-full w-full bg-cover bg-center -z-20"
           style={{
-            backgroundImage: "url('/images/background.jpg')", // Ensure this image path is correct
+            backgroundImage: "url('/images/world.svg')",
           }}
         />
 
@@ -63,7 +66,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
         <div className="absolute inset-0 bg-black bg-opacity-70 -z-5" />
 
         {/* Popup Content */}
-        <div className="relative p-20 text-white">
+        <div className="relative md:p-20 p-10 text-white">
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -73,13 +76,13 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
           </button>
 
           {/* Timer Content */}
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="md:text-3xl text-3xl font-bold md:mb-4 mb-6">
             Our <strong className="text-primary">Private Sale</strong> starts in
           </h2>
           <div className="flex justify-center gap-4 text-lg font-bold">
             <div className="text-center">
               <div
-                className="text-4xl font-mono w-[50px]" /* Monospace font & fixed width */
+                className="md:text-4xl text-3xl font-mono w-[50px]" /* Monospace font & fixed width */
               >
                 {days}
               </div>
@@ -87,7 +90,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
             </div>
             <div className="text-center">
               <div
-                className="text-4xl font-mono w-[50px]" /* Monospace font & fixed width */
+                className="md:text-4xl text-3xl font-mono w-[50px]" /* Monospace font & fixed width */
               >
                 {hours}
               </div>
@@ -95,7 +98,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
             </div>
             <div className="text-center">
               <div
-                className="text-4xl font-mono w-[50px]" /* Monospace font & fixed width */
+                className="md:text-4xl text-3xl font-mono w-[50px]" /* Monospace font & fixed width */
               >
                 {minutes}
               </div>
@@ -103,7 +106,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
             </div>
             <div className="text-center">
               <div
-                className="text-4xl font-mono w-[50px]" /* Monospace font & fixed width */
+                className="md:text-4xl text-3xl font-mono w-[50px]" /* Monospace font & fixed width */
               >
                 {seconds}
               </div>

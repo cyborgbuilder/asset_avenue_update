@@ -91,3 +91,21 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-emerald-700;
 }
+@keyframes popup {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-popup {
+  animation: popup 0.7s ease-in-out forwards;
+}
