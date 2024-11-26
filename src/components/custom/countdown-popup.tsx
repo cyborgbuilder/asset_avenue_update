@@ -41,16 +41,16 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       {/* Popup Container */}
       <div
-        className="relative rounded-lg shadow-lg max-w-xs md:max-w-sm text-center overflow-hidden
+        className="relative shadow-lg max-w-xs md:max-w-sm text-center overflow-hidden
           transform scale-0 animate-popup"
       >
         {/* Background Image Layer */}
-        <div
+        {/* <div
           className="absolute inset-0 h-full w-full bg-cover bg-center -z-20"
           style={{
             backgroundImage: "url('/images/world.svg')",
           }}
-        />
+        /> */}
 
         {/* Video Background Layer */}
         {/* <video
@@ -63,7 +63,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
         /> */}
 
         {/* Overlay for Text Visibility */}
-        <div className="absolute inset-0 bg-black -z-5" />
+        <div className="absolute inset-0 bg-black -z-5 rounded-xl border-primary border-2" />
 
         {/* Popup Content */}
         <div className="relative md:p-20 p-10 text-white">
