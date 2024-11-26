@@ -53,17 +53,17 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
         />
 
         {/* Video Background Layer */}
-        <video
+        {/* <video
           autoPlay
           loop
           muted
           playsInline
           src="/videos/bars.mp4" // Ensure this path is correct
           className="absolute inset-0 h-full w-full object-cover -z-10"
-        />
+        /> */}
 
         {/* Overlay for Text Visibility */}
-        <div className="absolute inset-0 bg-black bg-opacity-70 -z-5" />
+        <div className="absolute inset-0 bg-black -z-5" />
 
         {/* Popup Content */}
         <div className="relative md:p-20 p-10 text-white">
