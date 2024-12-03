@@ -6,11 +6,10 @@ interface CountdownPopupProps {
 }
 
 const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
-  const [timeLeft, setTimeLeft] = useState(() => {
-    const targetDate = new Date(); // Set the target date and time
-    targetDate.setDate(targetDate.getDate() + 3); // Example: 3 days from now
-    return targetDate.getTime() - new Date().getTime();
-  });
+  // Set the target date to December 5th, 12:00 PM
+  const targetDate = new Date("December 5, 2024 12:00:00");
+
+  const [timeLeft, setTimeLeft] = useState(() => targetDate.getTime() - new Date().getTime());
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,7 +17,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
     }, 1000);
 
     return () => clearInterval(interval); // Clean up on unmount
-  }, []);
+  }, [targetDate]);
 
   const formatTime = (ms: number) => {
     const totalSeconds = Math.floor(ms / 1000);
@@ -44,24 +43,6 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
         className="relative shadow-lg max-w-xs md:max-w-sm text-center overflow-hidden
           transform scale-0 animate-popup"
       >
-        {/* Background Image Layer */}
-        {/* <div
-          className="absolute inset-0 h-full w-full bg-cover bg-center -z-20"
-          style={{
-            backgroundImage: "url('/images/world.svg')",
-          }}
-        /> */}
-
-        {/* Video Background Layer */}
-        {/* <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          src="/videos/bars.mp4" // Ensure this path is correct
-          className="absolute inset-0 h-full w-full object-cover -z-10"
-        /> */}
-
         {/* Overlay for Text Visibility */}
         <div className="absolute inset-0 bg-black -z-5 rounded-xl border-primary border-2" />
 
@@ -82,7 +63,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
           <div className="flex justify-center gap-4 text-lg font-bold">
             <div className="text-center">
               <div
-                className="md:text-4xl text-3xl font-mono w-[50px]" /* Monospace font & fixed width */
+                className="md:text-4xl text-3xl font-mono w-[50px]"
               >
                 {days}
               </div>
@@ -90,7 +71,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
             </div>
             <div className="text-center">
               <div
-                className="md:text-4xl text-3xl font-mono w-[50px]" /* Monospace font & fixed width */
+                className="md:text-4xl text-3xl font-mono w-[50px]"
               >
                 {hours}
               </div>
@@ -98,7 +79,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
             </div>
             <div className="text-center">
               <div
-                className="md:text-4xl text-3xl font-mono w-[50px]" /* Monospace font & fixed width */
+                className="md:text-4xl text-3xl font-mono w-[50px]"
               >
                 {minutes}
               </div>
@@ -106,7 +87,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
             </div>
             <div className="text-center">
               <div
-                className="md:text-4xl text-3xl font-mono w-[50px]" /* Monospace font & fixed width */
+                className="md:text-4xl text-3xl font-mono w-[50px]"
               >
                 {seconds}
               </div>
@@ -116,12 +97,14 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
           <p className="text-sm mt-4 text-primary">
             Buy $AAV at an exclusive 70% discount!
           </p>
-          <button
-            className="mt-6 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
-            onClick={onClose}
+          <a
+            href="https://solsale.app/presale/8zAN2TjF1hftviFo416YMw7ZUc9HuV1UD7Yexp1rDWrg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
           >
             Join the Sale
-          </button>
+          </a>
         </div>
       </div>
     </div>
