@@ -6,10 +6,10 @@ interface CountdownPopupProps {
 }
 
 const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
-  // Set a fixed target date: December 5th, 9:18 AM
-  const targetDate = new Date("December 5, 2024 17:30:00");
+  // Set the target date to December 5, 2024, 17:00 UTC
+  const targetDateUTC = new Date(Date.UTC(2024, 11, 5, 12, 0, 0)); // Months are 0-based (11 = December)
 
-  const [timeLeft, setTimeLeft] = useState(() => targetDate.getTime() - new Date().getTime());
+  const [timeLeft, setTimeLeft] = useState(() => targetDateUTC.getTime() - new Date().getTime());
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,7 +17,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
     }, 1000);
 
     return () => clearInterval(interval); // Clean up on unmount
-  }, [targetDate]);
+  }, [targetDateUTC]);
 
   const formatTime = (ms: number) => {
     const totalSeconds = Math.floor(ms / 1000);
