@@ -74,7 +74,7 @@ export const Work: FC = () => {
             />
             <p className="xl:text-lg">
               Receive monthly rental income in{" "}
-              <span className="text-primary">Local Flat Currency</span> or
+              <span className="text-primary">Local Fiat Currency</span> or
               Crypto
             </p>
           </div>
@@ -85,7 +85,7 @@ export const Work: FC = () => {
               className="pointer-events-none max-w-14 xl:max-w-20"
             />
             <p className="xl:text-lg">
-              Resell your Real State Assets{" "}
+              Resell your Real Estate Assets{" "}
               <span className="text-primary">anytime</span>
             </p>
           </div>

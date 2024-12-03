@@ -6,8 +6,8 @@ interface CountdownPopupProps {
 }
 
 const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
-  // Set the target date to December 5th, 12:00 PM
-  const targetDate = new Date("December 5, 2024 12:00:00");
+  // Set a fixed target date: December 5th, 9:18 AM
+  const targetDate = new Date("December 5, 2024 17:30:00");
 
   const [timeLeft, setTimeLeft] = useState(() => targetDate.getTime() - new Date().getTime());
 
