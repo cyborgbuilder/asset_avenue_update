@@ -15,6 +15,7 @@ import {
 import WalletModal from "./wallet-modal";
 
 const navLinks = [
+  { name: "Seed sale", href: "/seed-sale" },
   { name: "Home", href: "/" },
   { name: "Passive Income Assets", href: "/market" },
   { name: "Investor Resale Hub", href: "/resale" },
@@ -23,7 +24,7 @@ const navLinks = [
   { name: "Contact Us", href: "/contact" },
   { name: "Dashboard", href: "https://dashboard.assetavenue.capital" },
   { name: "DAO", href: "/dao" },
-  { name: "Seed sale", href: "/seed-sale" },
+  
 ];
 
 export const Navbar: FC = () => {

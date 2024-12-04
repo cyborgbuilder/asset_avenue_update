@@ -4,7 +4,7 @@ export const Widget = () => {
     window.open(
       "https://solsale.app/presale/8zAN2TjF1hftviFo416YMw7ZUc9HuV1UD7Yexp1rDWrg",
       "_blank",
-    ); // Open in a new tab
+    );
   };
 
   return (
