@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/stake" element={<Stake />} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="/dao" element={<DAO />} />
-          <Route path="/pre-sale" element={<PreSale />} />
+          <Route path="/seed-sale" element={<PreSale />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

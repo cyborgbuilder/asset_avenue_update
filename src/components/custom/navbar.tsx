@@ -23,7 +23,7 @@ const navLinks = [
   { name: "Contact Us", href: "/contact" },
   { name: "Dashboard", href: "https://dashboard.assetavenue.capital" },
   { name: "DAO", href: "/dao" },
-  { name: "Seed sale", href: "/pre-sale" },
+  { name: "Seed sale", href: "/seed-sale" },
 ];
 
 export const Navbar: FC = () => {
