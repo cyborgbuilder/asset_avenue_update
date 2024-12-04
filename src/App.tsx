@@ -9,6 +9,7 @@ import {
   Stake,
   Contacts,
   DAO,
+  PreSale,
 } from "@/pages";
 import "@/css/styles.css";
 import { ScrollToTop } from "./components";
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/stake" element={<Stake />} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="/dao" element={<DAO />} />
+          <Route path="/pre-sale" element={<PreSale />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

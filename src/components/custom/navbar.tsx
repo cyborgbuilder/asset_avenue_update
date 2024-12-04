@@ -23,6 +23,7 @@ const navLinks = [
   { name: "Contact Us", href: "/contact" },
   { name: "Dashboard", href: "https://dashboard.assetavenue.capital" },
   { name: "DAO", href: "/dao" },
+  { name: "Pre Sale", href: "/pre-sale" },
 ];
 
 export const Navbar: FC = () => {
@@ -118,12 +119,12 @@ export const Navbar: FC = () => {
         )}
 
         {/* Navigation Links */}
-        <div className="hidden h-full items-center pb-0 xl:flex">
+        <div className="w-full hidden h-full items-center pb-0 xl:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
-              className={`px-2.5 py-2 uppercase ${link.href === pathname ? "text-brand-100" : ""}`}
+              className={`px-2 py-2 uppercase ${link.href === pathname ? "text-brand-100" : ""}`}
             >
               {link.name}
             </Link>

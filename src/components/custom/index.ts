@@ -17,6 +17,7 @@ export * from "./house";
 export * from "./stake";
 export * from "./contact";
 export * from "./daos";
+export * from "./pre-sale";
 export * from "./scroll-to-top";
 export * from "./countdown-popup";
 export { default as BlockchainRealEstate } from "./ai-investment";

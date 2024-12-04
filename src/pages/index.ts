@@ -7,3 +7,4 @@ export * from "./house";
 export * from "./stake";
 export * from "./contact";
 export * from "./dao";
+export * from "./pre-sale";
