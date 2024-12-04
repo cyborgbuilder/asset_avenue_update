@@ -20,7 +20,8 @@ export const Widget = () => {
         
       </div>
 
-      <div className="w-full flex items-center justify-center">
+      <div className="w-full flex-col flex items-center justify-center">
+        <h2>Or</h2>
       <Button
           className="my-10 uppercase tracking-wide"
           onClick={handleRedirect}

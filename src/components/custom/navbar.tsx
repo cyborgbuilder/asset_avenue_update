@@ -11,7 +11,7 @@ import {
   connectToSolflareWallet,
   disconnectFromSolflareWallet,
   isSolflareWalletConnected,
-} from "./wallet-connect"; // Update with Solflare functions
+} from "./wallet-connect";
 import WalletModal from "./wallet-modal";
 
 const navLinks = [
@@ -24,7 +24,6 @@ const navLinks = [
   { name: "Contact Us", href: "/contact" },
   { name: "Dashboard", href: "https://dashboard.assetavenue.capital" },
   { name: "DAO", href: "/dao" },
-  
 ];
 
 export const Navbar: FC = () => {
@@ -115,7 +114,7 @@ export const Navbar: FC = () => {
           <WalletModal
             closeModal={() => setIsModalOpen(false)}
             handlePhantomConnect={handlePhantomConnect}
-            handleSolflareConnect={handleSolflareConnect} // Pass Solflare connect
+            handleSolflareConnect={handleSolflareConnect}
           />
         )}
 
@@ -176,7 +175,9 @@ export const Navbar: FC = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="px-5 py-2 font-semibold uppercase"
+              className={`px-5 py-2 font-semibold uppercase ${
+                link.name === "Seed sale" ? "text-green-500" : ""
+              }`}
             >
               {link.name}
             </Link>
