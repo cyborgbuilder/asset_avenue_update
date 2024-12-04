@@ -4,13 +4,13 @@ import { Link, useLocation } from "react-router-dom";
 import { CgClose, CgMenuMotion } from "react-icons/cg";
 import { motion } from "framer-motion";
 import { navigationVariants } from "@/animations";
-import { 
-  connectToPhantomWallet, 
-  disconnectFromPhantomWallet, 
-  isPhantomWalletConnected, 
+import {
+  connectToPhantomWallet,
+  disconnectFromPhantomWallet,
+  isPhantomWalletConnected,
   connectToSolflareWallet,
-  disconnectFromSolflareWallet, 
-  isSolflareWalletConnected
+  disconnectFromSolflareWallet,
+  isSolflareWalletConnected,
 } from "./wallet-connect"; // Update with Solflare functions
 import WalletModal from "./wallet-modal";
 
@@ -23,7 +23,7 @@ const navLinks = [
   { name: "Contact Us", href: "/contact" },
   { name: "Dashboard", href: "https://dashboard.assetavenue.capital" },
   { name: "DAO", href: "/dao" },
-  { name: "Pre Sale", href: "/pre-sale" },
+  { name: "Seed sale", href: "/pre-sale" },
 ];
 
 export const Navbar: FC = () => {
@@ -43,7 +43,7 @@ export const Navbar: FC = () => {
 
   // Handle Phantom wallet connection
   const handlePhantomConnect = async () => {
-    try {  
+    try {
       const address = await connectToPhantomWallet();
       setWalletAddress(address);
       setIsModalOpen(false);
@@ -85,7 +85,7 @@ export const Navbar: FC = () => {
     const checkWalletConnection = async () => {
       const phantomAddress = await isPhantomWalletConnected();
       const solflareAddress = await isSolflareWalletConnected();
-      
+
       if (phantomAddress) {
         setWalletAddress(phantomAddress);
         setIsSolflare(false);
@@ -119,12 +119,14 @@ export const Navbar: FC = () => {
         )}
 
         {/* Navigation Links */}
-        <div className="w-full hidden h-full items-center pb-0 xl:flex">
+        <div className="hidden h-full w-full items-center pb-0 xl:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
-              className={`px-2 py-2 uppercase ${link.href === pathname ? "text-brand-100" : ""}`}
+              className={`px-1.5 py-2 uppercase ${
+                link.href === pathname ? "text-brand-100" : ""
+              } ${link.name === "Seed sale" ? "text-green-500" : ""}`}
             >
               {link.name}
             </Link>
@@ -134,7 +136,9 @@ export const Navbar: FC = () => {
         {/* Wallet Button */}
         <div className="flex items-center">
           <Button
-            onClick={walletAddress ? handleWalletDisconnect : handleWalletConnectClick}
+            onClick={
+              walletAddress ? handleWalletDisconnect : handleWalletConnectClick
+            }
             className="hidden rounded-[10px] bg-brand-100 px-[25px] py-[20px] text-xxs font-semibold uppercase xl:flex"
           >
             {walletAddress ? "Disconnect Wallet" : "Connect Wallet"}
@@ -177,7 +181,9 @@ export const Navbar: FC = () => {
             </Link>
           ))}
           <Button
-            onClick={walletAddress ? handleWalletDisconnect : handleWalletConnectClick}
+            onClick={
+              walletAddress ? handleWalletDisconnect : handleWalletConnectClick
+            }
             className="rounded-[10px] bg-brand-100 px-[25px] py-[20px] font-semibold uppercase"
           >
             {walletAddress ? "Disconnect Wallet" : "Connect Wallet"}

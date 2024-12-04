@@ -11,8 +11,9 @@ export const PreSale: FC = () => {
         </div>
 
         <div className="mt-20 w-full xl:mt-24">
-            <CeoMessage />
-            <Widget />
+          <Widget />
+          <CeoMessage />
+
           <Footer />
         </div>
       </div>
