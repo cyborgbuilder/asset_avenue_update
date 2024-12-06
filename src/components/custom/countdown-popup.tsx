@@ -1,4 +1,3 @@
-// src/components/CountdownPopup.tsx
 import React from "react";
 
 interface CountdownPopupProps {
