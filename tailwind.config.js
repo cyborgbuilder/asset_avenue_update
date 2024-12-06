@@ -1,5 +1,8 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import tailwindcssAnimate from "tailwindcss-animate";
+
+export default {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -23,7 +26,7 @@ module.exports = {
         Helvetica: ["Helvetica", "sans-serif"],
       },
       fontSize: {
-        xxxs: ["10px", "0.8rem"], // "12px"
+        xxxs: ["10px", "0.8rem"],
         xxs: ["11px", "0.9rem"],
         "4.5xl": ["44px", "50.6px"],
         "6.5xl": ["4.2rem", "4.5rem"],
@@ -87,5 +90,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
