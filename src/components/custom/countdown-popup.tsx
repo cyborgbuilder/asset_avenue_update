@@ -1,5 +1,5 @@
 // src/components/CountdownPopup.tsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface CountdownPopupProps {
   onClose: () => void; // Callback to close the popup
@@ -7,34 +7,34 @@ interface CountdownPopupProps {
 
 const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
   // Set the target date to December 5, 2024, 17:00 UTC
-  const targetDateUTC = new Date(Date.UTC(2024, 11, 5, 12, 0, 0)); // Months are 0-based (11 = December)
+  // const targetDateUTC = new Date(Date.UTC(2024, 11, 5, 12, 0, 0)); 
 
-  const [timeLeft, setTimeLeft] = useState(() => targetDateUTC.getTime() - new Date().getTime());
+  // const [timeLeft, setTimeLeft] = useState(() => targetDateUTC.getTime() - new Date().getTime());
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => Math.max(prev - 1000, 0)); // Prevent negative time
-    }, 1000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setTimeLeft((prev) => Math.max(prev - 1000, 0));
+  //   }, 1000);
 
-    return () => clearInterval(interval); // Clean up on unmount
-  }, [targetDateUTC]);
+  //   return () => clearInterval(interval); 
+  // }, [targetDateUTC]);
 
-  const formatTime = (ms: number) => {
-    const totalSeconds = Math.floor(ms / 1000);
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
+  // const formatTime = (ms: number) => {
+  //   const totalSeconds = Math.floor(ms / 1000);
+  //   const days = Math.floor(totalSeconds / 86400);
+  //   const hours = Math.floor((totalSeconds % 86400) / 3600);
+  //   const minutes = Math.floor((totalSeconds % 3600) / 60);
+  //   const seconds = totalSeconds % 60;
 
-    return {
-      days: String(days).padStart(2, "0"),
-      hours: String(hours).padStart(2, "0"),
-      minutes: String(minutes).padStart(2, "0"),
-      seconds: String(seconds).padStart(2, "0"),
-    };
-  };
+  //   return {
+  //     days: String(days).padStart(2, "0"),
+  //     hours: String(hours).padStart(2, "0"),
+  //     minutes: String(minutes).padStart(2, "0"),
+  //     seconds: String(seconds).padStart(2, "0"),
+  //   };
+  // };
 
-  const { days, hours, minutes, seconds } = formatTime(timeLeft);
+  // const { days, hours, minutes, seconds } = formatTime(timeLeft);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -58,9 +58,9 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
 
           {/* Timer Content */}
           <h2 className="md:text-3xl text-3xl font-bold md:mb-4 mb-6">
-            Our <strong className="text-primary">Private Sale</strong> starts in
+            Our <strong className="text-primary">Private Sale</strong> is live.
           </h2>
-          <div className="flex justify-center gap-4 text-lg font-bold">
+          {/* <div className="flex justify-center gap-4 text-lg font-bold">
             <div className="text-center">
               <div
                 className="md:text-4xl text-3xl font-mono w-[50px]"
@@ -93,7 +93,7 @@ const CountdownPopup: React.FC<CountdownPopupProps> = ({ onClose }) => {
               </div>
               <div className="text-sm">SECS</div>
             </div>
-          </div>
+          </div> */}
           <p className="text-sm mt-4 text-primary">
             Buy $AAV at an exclusive 70% discount!
           </p>
