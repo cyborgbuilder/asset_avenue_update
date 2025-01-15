@@ -11,9 +11,9 @@ import {
   Team,
   Work,
   BlockchainRealEstate,
-  Countdown
+  // Countdown
 } from "@/components";
-import { FC, useState } from "react";
+import { FC } from "react";
 
 const backgroundStyles = [
   {
