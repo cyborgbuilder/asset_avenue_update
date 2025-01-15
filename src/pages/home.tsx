@@ -35,13 +35,13 @@ const backgroundStyles = [
 ];
 
 export const Home: FC = () => {
-  const [showPopup, setShowPopup] = useState(true);
+  // const [showPopup, setShowPopup] = useState(true);
 
-  const handleClosePopup = () => setShowPopup(false);
+  // const handleClosePopup = () => setShowPopup(false);
 
   return (
     <section className="relative flex w-screen overflow-x-hidden flex-col items-center">
-       {showPopup && <Countdown onClose={handleClosePopup} />}
+       {/* {showPopup && <Countdown onClose={handleClosePopup} />} */}
 
       {backgroundStyles.map((style, index) => {
         return (

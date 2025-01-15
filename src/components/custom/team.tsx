@@ -15,6 +15,11 @@ const teamMembers = [
     src: "/images/team/she.png",
   },
   {
+    name: "Dan",
+    position: "Advisor - Influencer & Investor",
+    src: "/images/team/Dan.png",
+  },
+  {
     name: "Isuru Senadeera",
     position: "Blockchain Developer & Web Developer",
     src: "/images/team/isuru.png",
@@ -102,9 +107,9 @@ export const Team: FC = () => {
         </div>
 
         {/* content 2 */}
-        <div className="mt-20 flex w-full flex-wrap justify-center gap-8 px-3 xl:gap-4 xl:px-0">
+        <div className="mt-20 flex w-full flex-wrap justify-center gap-8 px-3 xl:gap-8 xl:px-0">
           {teamMembers.map((member, index) => (
-            <div className="w-full max-w-80 xl:max-w-[12.5rem]" key={index}>
+            <div className="w-full max-w-80 xl:max-w-[14.5rem]" key={index}>
               <ContentCard src={member.src} cardClassName="xl:h-48">
                 <div className="pb- flex min-h-12 flex-col items-center">
                   <p className="text-xs font-bold">{member.name}</p>
