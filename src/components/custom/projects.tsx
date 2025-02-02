@@ -150,7 +150,7 @@ const CardDetails: FC<{
           value={soldPercentage}
           className="h-5 w-full rounded-sm bg-white"
         />
-        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xxs font-medium text-green-500">
+        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xxs font-medium text-green-500  whitespace-nowrap">
           {soldPercentage}% Sold
         </span>
       </div>

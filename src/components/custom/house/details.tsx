@@ -204,7 +204,7 @@ const Wrap = styled.div`
 `;
 
 const Right = styled.div`
-  width: 100%;
+  width: 120%;
 
   @media only screen and (max-width: 1200px) {
     width: 100%;
