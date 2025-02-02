@@ -15,6 +15,11 @@ const teamMembers = [
     src: "/images/team/she.png",
   },
   {
+    name: "Chester Gilpin",
+    position: "CMO - 7+ Years Experience",
+    src: "/images/team/Chester Gilpin.png",
+  },
+  {
     name: "Dan",
     position: "Advisor - Influencer & Investor",
     src: "/images/team/Dan.png",

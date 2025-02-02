@@ -15,7 +15,7 @@ import {
 import WalletModal from "./wallet-modal";
 
 const navLinks = [
-  { name: "Seed sale", href: "/seed-sale" },
+  { name: "Presale", href: "/seed-sale" },
   { name: "Home", href: "/" },
   { name: "Passive Income Assets", href: "/market" },
   { name: "Investor Resale Hub", href: "/resale" },
@@ -176,7 +176,7 @@ export const Navbar: FC = () => {
               key={link.name}
               to={link.href}
               className={`px-5 py-2 font-semibold uppercase ${
-                link.name === "Seed sale" ? "text-green-500" : ""
+                link.name === "Presale" ? "text-green-500" : ""
               }`}
             >
               {link.name}
