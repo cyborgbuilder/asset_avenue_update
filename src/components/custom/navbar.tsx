@@ -15,7 +15,7 @@ import {
 import WalletModal from "./wallet-modal";
 
 const navLinks = [
-  { name: "Presale", href: "/seed-sale" },
+  { name: "Presale", href: "https://presale.assetevenue.capital" },
   { name: "Home", href: "/" },
   { name: "Passive Income Assets", href: "/market" },
   { name: "Investor Resale Hub", href: "/resale" },
