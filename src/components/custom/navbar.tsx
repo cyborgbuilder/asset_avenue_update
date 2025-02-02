@@ -176,7 +176,7 @@ export const Navbar: FC = () => {
               key={link.name}
               to={link.href}
               className={`px-5 py-2 font-semibold uppercase ${
-                link.name === "Presale" ? "text-green-500" : ""
+                link.name === "Presale" ? "text-white" : ""
               }`}
             >
               {link.name}
